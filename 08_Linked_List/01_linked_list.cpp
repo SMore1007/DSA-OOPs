@@ -8,7 +8,7 @@ class Node
     public:
         int value; // data to node
         Node *next; // pointer to a next node
-        
+
         Node(int val)
         {
             this->value = val;
@@ -40,7 +40,6 @@ int main()
     third->value = 40;
 
     // Linking the linked list by pointer 
-
     head->next = second;
     second->next = third;
     third->next = NULL; 

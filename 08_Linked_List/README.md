@@ -1,143 +1,50 @@
-# Linked List in C++
+# 🔗 Linked List in C
 
-## Overview
-This repository contains an implementation of a **Singly Linked List** in C++. A linked list is a dynamic data structure where elements (nodes) are connected using pointers. Each node consists of a **data field** and a **pointer to the next node** in the sequence.
+This repository contains a detailed implementation of **Linked Lists** in C programming language. It includes:
 
-## What is a Linked List?
-A **Linked List** is a linear data structure where elements are stored in nodes, which are connected using pointers. Unlike arrays, linked lists provide efficient insertions and deletions as they do not require contiguous memory allocation.
+- Singly Linked List
+- Doubly Linked List
+- Circular Linked List
+- Basic Operations like insertion, deletion, search, traversal
 
-### Types of Linked Lists
-1. **Singly Linked List** - Each node points to the next node.
-2. **Doubly Linked List** - Each node points to both the next and previous nodes.
-3. **Circular Linked List** - The last node points back to the first node.
+## 📚 What is a Linked List?
 
-## Advantages of Linked Lists
-- **Dynamic Memory Allocation** - Nodes are allocated memory as needed.
-- **Efficient Insertions/Deletions** - Unlike arrays, no shifting is required.
-- **Flexible Size** - The size of a linked list is not fixed like an array.
+A **linked list** is a linear data structure where elements are not stored at contiguous memory locations. Instead, each element (called a **node**) contains:
 
-## Disadvantages of Linked Lists
-- **Extra Memory Usage** - Each node requires additional memory for the pointer.
-- **Sequential Access** - Unlike arrays, random access is not possible.
+- `data` – the value stored in the node
+- `next` – a pointer to the next node in the list
 
-## Syntax of Linked List in C++
-A basic structure of a node in a linked list is as follows:
+![Linked List Structure](https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg)
 
-```cpp
-struct Node {
-    int data;    // Data part of the node
-    Node* next;  // Pointer to the next node
-};
-```
+## 🧠 Why Use Linked Lists?
 
-A simple way to create and manipulate a linked list in C++:
+- Dynamic memory allocation (no predefined size like arrays)
+- Efficient insertions/deletions (especially in the middle of the list)
+- Great for building stacks, queues, and graphs
 
-```cpp
-class LinkedList {
-private:
-    Node* head;  // Pointer to the first node
-public:
-    LinkedList() { head = nullptr; }
+---
 
-    void insertAtEnd(int val) {
-        Node* newNode = new Node{val, nullptr};
-        if (!head) {
-            head = newNode;
-            return;
-        }
-        Node* temp = head;
-        while (temp->next) {
-            temp = temp->next;
-        }
-        temp->next = newNode;
-    }
+## 🧰 Features & Operations
 
-    void display() {
-        Node* temp = head;
-        while (temp) {
-            cout << temp->data << " -> ";
-            temp = temp->next;
-        }
-        cout << "NULL" << endl;
-    }
-};
-```
+Each linked list type has basic operations:
 
-## Features
-- Insert elements at the beginning, end, or a specific position
-- Delete elements from the beginning, end, or a specific position
-- Display the linked list
-- Search for an element in the linked list
-- Reverse the linked list
+### ✅ Singly Linked List
 
-## Prerequisites
-To compile and run the C++ program, ensure you have:
-- A C++ compiler (e.g., g++, Clang, MSVC)
-- A code editor (e.g., VS Code, Code::Blocks, or any text editor)
+- Insert at beginning
+- Insert at end
+- Insert at a given position
+- Delete a node
+- Search a node
+- Display list
 
-## Usage
-Clone the repository and compile the program using a C++ compiler.
+### ✅ Doubly Linked List
 
-### Compilation & Execution
-```sh
-# Compile the program
-g++ linked_list.cpp -o linked_list
+- Traverse forward and backward
+- Insert and delete from both ends
 
-# Run the executable
-./linked_list
-```
+### ✅ Circular Linked List
 
-## Sample Code
-```cpp
-#include <iostream>
-using namespace std;
+- Last node points to the head
+- Good for round-robin scheduling
 
-class Node {
-public:
-    int data;
-    Node* next;
-
-    Node(int val) {
-        data = val;
-        next = nullptr;
-    }
-};
-
-class LinkedList {
-private:
-    Node* head;
-public:
-    LinkedList() { head = nullptr; }
-
-    void insertAtEnd(int val) {
-        Node* newNode = new Node(val);
-        if (!head) {
-            head = newNode;
-            return;
-        }
-        Node* temp = head;
-        while (temp->next) {
-            temp = temp->next;
-        }
-        temp->next = newNode;
-    }
-
-    void display() {
-        Node* temp = head;
-        while (temp) {
-            cout << temp->data << " -> ";
-            temp = temp->next;
-        }
-        cout << "NULL" << endl;
-    }
-};
-
-int main() {
-    LinkedList list;
-    list.insertAtEnd(10);
-    list.insertAtEnd(20);
-    list.insertAtEnd(30);
-    list.display();
-    return 0;
-}
-```
+---
