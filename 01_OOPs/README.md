@@ -30,7 +30,8 @@
 
     7. What is the difference between compile-time and run-time polymorphism?
 
-        Compile-time polymorphism (function overloading, operator overloading) is resolved at compile-time, while run-time polymorphism (virtual functions) is resolved at runtime.
+        Compile-time polymorphism (function overloading, operator overloading) is resolved at
+        compile-time, while run-time polymorphism (virtual functions) is resolved at runtime.
 
     8. What is a virtual function?
 
