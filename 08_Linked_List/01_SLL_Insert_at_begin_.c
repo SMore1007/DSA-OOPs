@@ -35,28 +35,44 @@ void insertAtBegin(struct Node** head_ref, int val)
 
 int main()
 {
-    // head Node space
-    struct Node* head   = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* second = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* third  = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* forth  = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* head = NULL;
+    struct Node* temp = NULL;
+    struct Node* prev = NULL;
 
-    // Assign the value to linked list
-    head->data   = 10;
-    second->data = 20;
-    third->data  = 30;
-    forth->data  = 40;
+    int total_nodes = 0;
+    printf("How many Nodes Do you want to create: \n");
+    scanf("%d", &total_nodes);
 
-    // Link the linked list
-    head->next   = second;
-    second->next = third;
-    third->next  = forth;
-    forth->next  = NULL;
+    for (int i = 0; i < total_nodes; i++) 
+    {
+        int temp_buffer;
+
+        // Create a new node
+        temp = (struct Node*) malloc(sizeof(struct Node));
+
+        printf("Enter a Data for node %d", i+1);
+        scanf("%d", &temp_buffer);
+
+        temp->data = temp_buffer;
+        temp->next = NULL;
+
+        if (head == NULL) {
+            // First node becomes head
+            head = temp;
+        } else {
+            // Link the previous node to the new one
+            prev->next = temp;
+        }
+        // Update previous node
+        prev = temp;
+    }
 
     printf("Previous Linked List\n");
     printList(head);
-    printf("\nInserting %d at begining\n", 80);
+
+    printf("\nInserting %d at beginning\n", 80);
     insertAtBegin(&head, 80);
+
     printList(head);
     return 0;
 }
