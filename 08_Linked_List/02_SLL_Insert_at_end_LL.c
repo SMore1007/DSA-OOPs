@@ -44,23 +44,36 @@ void insertAtEnd(struct Node** head_ref, int val)
 
 int main()
 {
-    // head Node space
-    struct Node* head   = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* second = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* third  = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* forth  = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* head = NULL;
+    struct Node* temp = NULL;
+    struct Node* prev = NULL;
 
-    // Assign the value to linked list
-    head->data   = 10;
-    second->data = 20;
-    third->data  = 30;
-    forth->data  = 40;
+    int total_nodes = 0;
 
-    // Link the linked list
-    head->next   = second;
-    second->next = third;
-    third->next  = forth;
-    forth->next  = NULL;
+    printf("Enter total Number of Nodes : \n");
+    scanf("%d", &total_nodes);
+
+    for (int i = 0; i < total_nodes; i++)
+    {
+        struct Node *temp = (struct Node*) malloc(sizeof(struct Node));
+
+        int data_buffer = 0;
+        printf("Enter Data for the node %d \n", i +1);
+        scanf("%d", &data_buffer);
+
+        temp->data = data_buffer;
+        temp->next = NULL;
+
+        if(head == NULL){
+            head = temp;
+        }else{
+            // Link the previous node to the new one
+            prev->next = temp;
+        }
+        // Update previous node
+        prev = temp;
+        
+    }
 
     printf("Previous Linked List:\n");
     printList(head);
