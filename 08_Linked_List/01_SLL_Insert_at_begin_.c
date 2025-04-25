@@ -29,7 +29,6 @@ void insertAtBegin(struct Node** head_ref, int val)
     dummyNode->next = *head_ref;
 
     // Move the head to the point to the dummyNode
-
     *head_ref = dummyNode;
 }
 
