@@ -46,7 +46,7 @@ int main() {
     insertAtEndCDLL(&head, 20);
     insertAtEndCDLL(&head, 60);
 
-    printf("------------------Operations------------------------\n");
+    printf("------------------Operation------------------------\n");
     printf("insertAtEndCDLL(&head, 11);\ninsertAtEndCDLL(&head, 22);\ninsertAtEndCDLL(&head, 30);\ninsertAtEndCDLL(&head, 35);\ninsertAtEndCDLL(&head, 20);\ninsertAtEndCDLL(&head, 60);\n");
     printf("------------------------------------------\n");
     printf("Circular Doubly Linked List:\n");
